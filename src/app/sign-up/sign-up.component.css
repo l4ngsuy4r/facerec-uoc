@@ -9,3 +9,13 @@
   align-items: center;
   justify-content: center;
 }
+
+video {
+  height: 480px;
+  width: 640px;
+  border-radius: 8px;
+}
+
+button {
+  margin: 20px 10px;
+}
