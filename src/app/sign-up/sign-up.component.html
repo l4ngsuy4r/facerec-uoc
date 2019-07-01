@@ -1,9 +1,12 @@
-<video #player id="player" controls autoplay></video>
+<div id="media">
+  <video #player id="player" controls autoplay></video>
+  <canvas #canvas id="canvas" width="320" height="240"></canvas>
+</div>
 <div>
   <button mat-flat-button class="mat-primary" (click)="startStream()">START</button>
+  <button mat-flat-button class="mat-accent" (click)="captureImage()">CAPTURE</button>
   <button mat-flat-button class="mat-warn" (click)="stopStream()">STOP</button>
-  <button mat-flat-button class="mat-accent" id="capture" (click)="captureImage()">CAPTURE</button>
 </div>
-<canvas #canvas id="canvas" width="320" height="240"></canvas>
+
 
 

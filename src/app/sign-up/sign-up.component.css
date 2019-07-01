@@ -10,12 +10,21 @@
   justify-content: center;
 }
 
-video {
+video, canvas {
   height: 480px;
   width: 640px;
   border-radius: 8px;
+  margin: 10px;
+  background-color: #f5f5f5;
 }
 
 button {
   margin: 20px 10px;
 }
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
