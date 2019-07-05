@@ -38,8 +38,9 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
       status => {
         if (status === 'VALID') {
           if (this.camAccess) {
-            this.stepperForm.controls.step2.setValue(true)
-            this.stepper.selectedIndex = 2
+            // this.stepperForm.controls.step2.setValue(true)
+            // this.stepper.selectedIndex = 2
+            this.stepper.next()
           } else this.stepper.next()
         }
       }
