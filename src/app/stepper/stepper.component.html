@@ -1,0 +1,54 @@
+<form [formGroup]="stepperForm">
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step
+      matRipple
+      matRippleColor="#fff"
+      [stepControl]="stepperForm.controls.step1"
+      [editable]="false"
+    >
+      <ng-template matStepLabel>Acepta las condiciones</ng-template>
+      <p>
+        Antes de registrarte, es necesario que leas y aceptes nuestros
+        <a
+          href="https://www.smowltech.net/firma/conditions_GDPR_1_es.html"
+          target="_blank"
+          >términos y condiciones</a
+        >.
+      </p>
+      <mat-checkbox formControlName="step1"
+        >He leído y acepto los términos y condiciones.</mat-checkbox
+      >
+    </mat-step>
+
+    <mat-step [stepControl]="stepperForm.controls.step2" [editable]="false">
+      <ng-template matStepLabel>Habilita la cámara</ng-template>
+      <p>
+        Ahora es necesario que proporciones los permisos necesarios a tu
+        navegador para poder acceder a la cámara. Al hacer click en el botón, es
+        posible que tengas que aceptar un diálogo como éste:
+      </p>
+      <img src="/assets/cam-access.png" class="mat-elevation-z1" />
+      <button mat-button type="button" (click)="getCamAccess()">
+        Permitir acceso
+      </button>
+    </mat-step>
+
+    <mat-step [stepControl]="stepperForm.controls.step3" [editable]="false">
+      <ng-template matStepLabel>Hazte las fotos</ng-template>
+      <p>
+        Para registrarte debes hacer tres fotografías con la cámara web de tu
+        ordenador. Así podremos crear el modelo biométrico de tu cara. Durante
+        el curso utilizaremos este modelo para contrastar tu identidad.
+      </p>
+      <app-picture-registration
+        *ngIf="stepperForm.controls.step2.value"
+        (completed)="stepperForm.controls.step3.setValue(true)"
+      ></app-picture-registration>
+    </mat-step>
+
+    <mat-step [editable]="false">
+      <ng-template matStepLabel>¡Listo!</ng-template>
+      <p>Enhorabuena, tus datos ya estan en el sistema.</p>
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>

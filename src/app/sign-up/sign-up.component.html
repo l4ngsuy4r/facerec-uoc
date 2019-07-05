@@ -1,163 +1,48 @@
-<mat-toolbar class="mat-accent"><img id="logo" src="/assets/uoc-logo.png"></mat-toolbar>
-<div id="container">
-  <div id="left">
-    <div id="left-top">
-      <div id="left-top-left">
-        <div id="left-top-left-left">
-          <div id="left-top-left-top">
-            <!--video -->
-            <video #player controls autoplay></video>
-          </div>
-          <div id="left-top-left-bottom">
-            <!--buttons-->
-            <mat-checkbox id="conditions" [(ngModel)]="conditions">
-              Acepto las
-              <a
-                href="https://www.smowltech.net/firma/conditions_GDPR_1_es.html"
-                target="_blank"
-              >condiciones</a
-              >
-            </mat-checkbox>
-
-            <div id="buttons">
-              <button
-                mat-icon-button
-                (click)="capture()"
-                [disabled]="!capturing || !conditions"
-                matTooltip="Saca una foto"
-                class="mat-primary"
-              >
-                <mat-icon>camera_alt</mat-icon>
-              </button>
-              <button
-                mat-icon-button
-                (click)="retry()"
-                [disabled]="pictures.length === 0"
-                matTooltip="Vuelve a empezar"
-              >
-                <mat-icon>undo</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="left-top-left-right">
-          <!-- pictures-->
-          <img class="picture" *ngFor="let picture of pictures" [src]="picture" />
-        </div>
-      </div>
-    </div>
-    <div id="left-bottom">
-      <!--steps-->
-    </div>
+<div id="left">
+  <div id="logo-wrapper">
+    <img src="/assets/uoc-logo2.jpg" id="logo" />
+    <h1 id="header">Reconocimiento facial</h1>
   </div>
-  <mat-divider vertical></mat-divider>
-  <div id="right">
-
-    <mat-list>
-      <mat-list-item>
-        <mat-icon matListIcon>folder</mat-icon>
-        <h3 matLine> Hola </h3>
-        <p matLine>
-          <span> Esto es una prueba </span>
-          <span class="demo-2"> -- Esto es otra prueba un poquito mas larga y extensa </span>
-        </p>
-      </mat-list-item>
-    </mat-list>
-
-    <!--  <div id="image-cards">-->
-    <!--    <mat-card class="image-card">-->
-    <!--      <mat-card-header>-->
-    <!--        <mat-card-title>1. Registro</mat-card-title>-->
-    <!--      </mat-card-header>-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <img mat-card-image src="/assets/uoc1.png" />-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          Para registrarte debes hacer tres fotografías con la cámara web de tu-->
-    <!--          ordenador. Así podremos crear el modelo biométrico de tu cara. Durante-->
-    <!--          el curso utilizaremos este modelo para contrastar tu identidad.-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-    <!--    </mat-card>-->
-
-    <!--    <mat-card class="image-card">-->
-    <!--      <mat-card-header>-->
-    <!--        <mat-card-title>2. Monitorización</mat-card-title>-->
-    <!--      </mat-card-header>-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <img mat-card-image src="/assets/uoc2.png" />-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          Durante la realización de las actividades, el sistema captará mágenes-->
-    <!--          aleatoriamente. Estas imágenes se enviarán al servidor de Smowltech-->
-    <!--          para verificar tu identidad. Para ello, es necesario que autorices la-->
-    <!--          aplicación a utilizar tu cámara web.-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-    <!--    </mat-card>-->
-
-    <!--    <mat-card class="image-card">-->
-    <!--      <mat-card-header>-->
-    <!--        <mat-card-title>3. Resultados</mat-card-title>-->
-    <!--      </mat-card-header>-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <img mat-card-image src="/assets/uoc3.png" />-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          Los resultados estarán disponibles en 24 horas como máximo. Las-->
-    <!--          imágenes se revisarán en caso de que hubiera alguna incidencia o-->
-    <!--          reclamación.-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-    <!--    </mat-card>-->
-    <!--  </div>-->
-    <!--  <div id="cards">-->
-    <!--    <mat-card>-->
-    <!--      <mat-card-header>-->
-    <!--        <mat-card-title>Seguridad</mat-card-title>-->
-    <!--      </mat-card-header>-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          Las imágenes se envían siempre con un protocolo de seguridad HTTPS y-->
-    <!--          por canales seguros y cifrados. Además, solo se identifican con un-->
-    <!--          código (nunca con datos de carácter personal). Todas las imágenes se-->
-    <!--          eliminarán cuando termine el semestre.-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-    <!--    </mat-card>-->
-
-    <!--    <mat-card>-->
-    <!--      <mat-card-header>-->
-    <!--        <mat-card-title>Privacidad</mat-card-title>-->
-    <!--      </mat-card-header>-->
-    <!--      <mat-divider></mat-divider>-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          La UOC sólo revisará las imágenes en los casos de incidencia o-->
-    <!--          reclamación garantizando siempre la seguridad y privacidad de las-->
-    <!--          mismas y el cumplimiento del RGPD. Si se detecta algún comportamiento-->
-    <!--          no autorizado, será comunicado a la UOC.-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-    <!--    </mat-card>-->
-    <!--  </div>-->
-
+  <div id="registration-wrapper">
+    <mat-divider></mat-divider>
+    <div id="stepper-wrapper">
+      <h1 id="title">¡Regístrate!</h1>
+      <app-stepper></app-stepper>
+    </div>
+    <mat-divider></mat-divider>
   </div>
-
-  <!-- camera stream -->
-
-  <!-- buttons -->
-  <!--<div id="bottom-bar">-->
-
-  <!--</div>-->
-
-  <!-- pictures -->
-
-  <!-- hidden canvas -->
-  <canvas #canvas width="320" height="240"></canvas>
-
+  <!--  <mat-divider></mat-divider>-->
+  <app-section title="1. Registro" image="assets/uoc1.png">
+    Para registrarte debes hacer tres fotografías con la cámara web de tu
+    ordenador. Así podremos crear el modelo biométrico de tu cara. Durante el
+    curso utilizaremos este modelo para contrastar tu identidad.
+  </app-section>
+  <mat-divider></mat-divider>
+  <app-section title="2. Monitorización" image="assets/uoc2.png" reverse>
+    Durante la realización de las actividades, el sistema captará mágenes
+    aleatoriamente. Estas imágenes se enviarán al servidor de Smowltech para
+    verificar tu identidad. Para ello, es necesario que autorices la aplicación
+    a utilizar tu cámara web.
+  </app-section>
+  <mat-divider></mat-divider>
+  <app-section title="3. Resultados" image="assets/uoc3.png">
+    Los resultados estarán disponibles en 24 horas como máximo. Las imágenes se
+    revisarán en caso de que hubiera alguna incidencia o reclamación.
+  </app-section>
+  <mat-divider></mat-divider>
+  <div id="security-privacy">
+    <app-section title="Seguridad">
+      Las imágenes se envían siempre con un protocolo de seguridad HTTPS y por
+      canales seguros y cifrados. Además, solo se identifican con un código
+      (nunca con datos de carácter personal). Todas las imágenes se eliminarán
+      cuando termine el semestre.
+    </app-section>
+    <div id="spacer"></div>
+    <app-section title="Privacidad">
+      La UOC sólo revisará las imágenes en los casos de incidencia o reclamación
+      garantizando siempre la seguridad y privacidad de las mismas y el
+      cumplimiento del RGPD. Si se detecta algún comportamiento no autorizado,
+      será comunicado a la UOC.
+    </app-section>
+  </div>
 </div>

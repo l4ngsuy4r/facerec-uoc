@@ -1,0 +1,23 @@
+<div id="video-wrapper">
+  <video #player autoplay></video>
+</div>
+<div id="buttons">
+  <button
+    mat-icon-button
+    (click)="capture()"
+    [disabled]="pictures.length === numberOfPics"
+    matTooltip="Saca una foto"
+    class="mat-primary"
+  >
+    <mat-icon>camera_alt</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    (click)="reset()"
+    [disabled]="pictures.length === 0"
+    matTooltip="Vuelve a empezar"
+  >
+    <mat-icon>undo</mat-icon>
+  </button>
+</div>
+<canvas #canvas width="320" height="240"></canvas>

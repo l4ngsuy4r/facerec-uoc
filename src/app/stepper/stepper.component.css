@@ -1,0 +1,62 @@
+img {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+mat-horizontal-stepper {
+  background-color: transparent;
+  color: white;
+  padding-bottom: 48px;
+}
+
+a {
+  color: #73edff;
+}
+::ng-deep .mat-step-header div.mat-step-label {
+  color: white;
+  font-family: Bulo, sans-serif;
+  font-size: 16px;
+}
+
+::ng-deep .mat-horizontal-stepper-header .mat-step-icon span {
+  font-family: Bulo, sans-serif;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+  background-color: white;
+  color: black;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #38ff90;
+  color: #010179;
+}
+
+::ng-deep .mat-stepper-horizontal-line {
+  border-top-color: #73edff;
+}
+
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active  {
+  color: white;
+}
+
+::ng-deep div.mat-step-label.mat-step-label-active.mat-step-label-selected {
+  color: #38ff90
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: white;
+}
+
+mat-checkbox.mat-checkbox {
+  display: block;
+  text-align: center;
+  margin-top: 32px;
+}
+
+p {
+  /*text-align: center;*/
+}

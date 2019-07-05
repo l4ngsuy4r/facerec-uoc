@@ -3,6 +3,48 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: whitesmoke;
+  background-color: white;
+  line-height: 1.7;
+  font-family: Trola, serif;
+  font-size: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cdcdcd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c3c3c3;
+}
+
+@font-face {
+  font-family: "Bulo";
+  src: url("/assets/fonts/bulo/Bulo W03 Bold.woff2") format('woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Trola";
+  src: url("/assets/fonts/trola/Trola W03 Regular.woff2") format('woff2');
+  font-weight: 400;
+}
+
+* {
+  font-family: Trola, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Bulo, sans-serif;
 }

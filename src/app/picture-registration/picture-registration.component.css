@@ -1,0 +1,20 @@
+canvas {
+  display: none;
+}
+
+video {
+  height: 180px;
+  width: 240px;
+}
+#video-wrapper {
+  width: 180px;
+  overflow: hidden;
+  border-radius: 50%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+}
+/*#glass{*/
+/*  margin-left: -220px;*/
+/*}*/

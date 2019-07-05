@@ -1,0 +1,12 @@
+<div id="text">
+  <h2 id="title">{{ title }}</h2>
+  <p>
+    <ng-content></ng-content>
+  </p>
+</div>
+
+<ng-container *ngIf="image">
+  <div id="spacer"></div>
+  <img [src]="image" />
+</ng-container>
+

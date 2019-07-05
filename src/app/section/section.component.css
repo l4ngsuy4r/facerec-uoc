@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  /*flex-flow: row nowrap;*/
+  align-items: center;
+  margin: 16px 32px;
+}
+
+img {
+  max-width: 50%;
+}
+
+#title {
+  /*font-family: Montserrat, sans-serif;*/
+  color: #010179;
+  /*color: #2e3454;*/
+}
+
+#spacer {
+  min-width: 32px;
+  width: 32px;
+}
