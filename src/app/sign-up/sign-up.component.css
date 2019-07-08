@@ -9,7 +9,6 @@
 
 #stepper-wrapper {
   width: 800px;
-  min-width: 800px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -20,12 +19,33 @@
   display: block;
 }
 
+#top-bar-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#blue {
+  background: #73edff;
+  flex-grow: 1;
+}
+
+#white {
+  background: white;
+  flex-grow: 1;
+}
+
 #registration-wrapper {
-  background: #000078 url("/assets/uoc-bg-edited.png");
+  background: #000078 url('/assets/uoc-bg.jpg') center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
+}
+
+div.top-bar-wrapper {
+  background: #73edff;
+  /*height: 100%;*/
+  /*width: 100%;*/
 }
 
 #registration-wrapper mat-divider {
@@ -37,15 +57,16 @@
 }
 
 #logo {
-  height: 56px;
+  height: 72px;
   display: block;
-  margin: 8px 0;
+  margin: 8px 0 8px -97px;
 }
 
-#logo-wrapper {
+#top-bar {
   height: 56px;
   margin: 8px auto;
   max-width: 800px;
+  width: 800px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -58,12 +79,12 @@
   font-family: Trola, serif;
   /*font-weight: 400;*/
   font-size: 32px;
-  border-top: 4px solid #73edff;
-  border-bottom: 4px solid #73edff;
+
+  /*border-bottom: 4px solid #73edff;*/
   display: block;
   width: 100%;
-  padding-bottom: 2px;
-  line-height: 46px;
+  padding: 16px 0;
+  line-height: 32px;
 }
 
 #left {
@@ -97,7 +118,6 @@ mat-divider {
   width: 32px;
 }
 
-
 #title {
   padding: 24px 0;
   margin: 0;
@@ -123,4 +143,40 @@ app-section {
 
 ::ng-deep #security-privacy #title {
   border-top: none;
+}
+
+@media (max-width: 800px) {
+  #top-bar,
+  #security-privacy,
+  app-section,
+  #registration-wrapper mat-divider,
+  #stepper-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+  #logo {
+    margin: 8px 0;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1600px) {
+  #top-bar,
+  #security-privacy,
+  app-section,
+  #registration-wrapper mat-divider,
+  #stepper-wrapper {
+    max-width: 800px;
+    width: 800px;
+  }
+}
+
+@media (min-width: 1601px) {
+  #top-bar,
+  #security-privacy,
+  app-section,
+  #registration-wrapper mat-divider,
+  #stepper-wrapper {
+    max-width: 50%;
+    width: 50%;
+  }
 }

@@ -19,7 +19,7 @@
 }
 
 ::ng-deep button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button span {
-  color:#000078;
+  color: #000078;
   font-family: Bulo, sans-serif;
   font-weight: 400;
   font-size: 18px;
