@@ -3,8 +3,8 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  background-color: white;
-  line-height: 1.7;
+  /*background-color: #f0f0f0;*/
+  line-height: 1.5;
   font-family: Trola, serif;
   font-size: 20px;
 }
@@ -36,15 +36,32 @@ body {
 }
 
 @font-face {
+  font-family: "Bulo";
+  src: url("/assets/fonts/bulo/Bulo W03 Regular.woff2") format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "Trola";
   src: url("/assets/fonts/trola/Trola W03 Regular.woff2") format('woff2');
   font-weight: 400;
 }
 
 * {
-  font-family: Trola, serif;
+  /*font-family: Trola, serif;*/
+  font-family: Bulo, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Bulo, sans-serif;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-block {
+  /*display: block;*/
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

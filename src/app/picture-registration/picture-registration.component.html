@@ -1,23 +1,27 @@
-<div id="video-wrapper">
-  <video #player autoplay></video>
+<div id="wrapper">
+  <div id="video-wrapper">
+    <video #player autoplay></video>
+  </div>
+  <div id="buttons">
+<!--    <h3>{{ 'Fotos: ' + (pictures ? pictures.length : '0') + '/' + numberOfPics }}</h3>-->
+    <button
+      class="button inverse-button primary-button"
+      mat-flat-button
+      (click)="capture()"
+      [disabled]="pictures.length === numberOfPics"
+      autofocus
+    >
+      <mat-icon>camera_alt</mat-icon> HACER FOTO ({{(pictures ? pictures.length : '0') + '/' + numberOfPics}})
+    </button>
+    <button
+      class="button stroked-button inverse-button"
+      mat-stroked-button
+      (click)="reset()"
+      [disabled]="pictures.length === 0"
+    >
+      <mat-icon>undo</mat-icon> DESCARTAR FOTOS
+    </button>
+  </div>
 </div>
-<div id="buttons">
-  <button
-    mat-icon-button
-    (click)="capture()"
-    [disabled]="pictures.length === numberOfPics"
-    matTooltip="Saca una foto"
-    class="mat-primary"
-  >
-    <mat-icon>camera_alt</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    (click)="reset()"
-    [disabled]="pictures.length === 0"
-    matTooltip="Vuelve a empezar"
-  >
-    <mat-icon>undo</mat-icon>
-  </button>
-</div>
+<app-gallery [images]="pictures"></app-gallery>
 <canvas #canvas width="320" height="240"></canvas>

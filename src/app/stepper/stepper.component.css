@@ -9,7 +9,6 @@ img {
 mat-horizontal-stepper {
   background-color: transparent;
   color: white;
-  padding-bottom: 48px;
 }
 
 a {
@@ -54,9 +53,25 @@ a {
 mat-checkbox.mat-checkbox {
   display: block;
   text-align: center;
-  margin-top: 32px;
+  margin: 24px 0;
+}
+
+/*button[mat-stroked-button].mat-stroked-button {*/
+/*  display: block;*/
+/*  border-color: #73edff;*/
+/*  margin: 32px auto;*/
+/*}*/
+
+button[mat-stroked-button].mat-stroked-button span {
+  font-family: Bulo, sans-serif !important;
+  font-size: 18px;
 }
 
 p {
-  /*text-align: center;*/
+  text-align: center;
+}
+
+.margin-x {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }

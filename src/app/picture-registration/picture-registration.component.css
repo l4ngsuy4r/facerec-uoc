@@ -6,15 +6,57 @@ video {
   height: 180px;
   width: 240px;
 }
+
+#wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
 #video-wrapper {
-  width: 180px;
+  width: 240px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 8px;
   height: 180px;
   display: flex;
-  justify-content: center;
-  margin: 32px auto;
+  margin: 24px;
 }
+
+#discard-button {
+  color: white;
+}
+
+::ng-deep #camera-button span {
+  font-family: Bulo, sans-serif;
+  font-size: 18px;
+  line-height: 39px;
+}
+
+::ng-deep #camera-button mat-icon {
+  line-height: 24px;
+  margin-right: 4px;
+}
+
+#camera-button {
+  background-color: #38ff90;
+  color:#000078;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 180px;
+  max-height: 180px;
+  margin: 32px;
+  /*align-items: flex-start;*/
+}
+
+#buttons > * {
+  flex-shrink: 1;
+  margin: 0;
+}
+
 /*#glass{*/
 /*  margin-left: -220px;*/
 /*}*/

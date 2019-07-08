@@ -11,28 +11,21 @@
   width: 800px;
   min-width: 800px;
   max-width: 800px;
-  /*flex-shrink: 1;*/
-  /*background-color: white;*/
   margin-left: auto;
   margin-right: auto;
-  /*border-left: 1px solid lightgrey;*/
-  /*min-height: 100%;*/
-  /*overflow-x: auto;*/
-  /*background-color: #72ebfe*/
+  padding: 32px 0;
 }
 
 #stepper-wrapper > app-stepper {
   display: block;
-  /*background-color: #72ebfe;*/
 }
 
 #registration-wrapper {
-  background: #000078 url("/assets/uoc-bg-edited.png") center;
+  background: #000078 url("/assets/uoc-bg-edited.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
-  /*background-op*/
+  margin-bottom: 32px;
 }
 
 #registration-wrapper mat-divider {
@@ -40,33 +33,40 @@
   margin-left: auto;
   margin-right: auto;
   height: 0;
-  border-color: #38ff90;
+  border-color: #73edff;
 }
 
 #logo {
-  width: 200px;
+  height: 56px;
   display: block;
-  margin: 16px 0;
+  margin: 8px 0;
 }
 
 #logo-wrapper {
-  height: 96px;
+  height: 56px;
+  margin: 8px auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  background-color: white;
 }
+
 #header {
-  /*font-family: Montserrat, sans-serif;*/
-  color: #010179;
-  margin-left: 32px;
+  color: #000078;
+  margin-left: 8px;
+  font-family: Trola, serif;
+  /*font-weight: 400;*/
+  font-size: 32px;
+  border-top: 4px solid #73edff;
+  border-bottom: 4px solid #73edff;
+  display: block;
+  width: 100%;
+  padding-bottom: 2px;
+  line-height: 46px;
 }
 
 #left {
-  /*background-color: rgb(247, 247, 247);*/
-  background: white;
   flex-grow: 1;
   min-height: 100%;
   overflow-x: auto;
@@ -76,18 +76,20 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 32px;
+  padding-top: 24px;
 }
 
 mat-divider {
-  border-top: 2px solid #73edff;
-  border-bottom: 2px solid #73edff;
-  width: 800px;
-  margin-right: auto;
-  margin-left: auto;
+  /*border-top: 2px solid #000078;*/
+  /*border-bottom: 2px solid #000078;*/
+  /*width: 800px;*/
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
 }
 
 #spacer {
@@ -95,30 +97,30 @@ mat-divider {
   width: 32px;
 }
 
-#registration-wrapper {
-  background-color: #010179;
-  /*height: 601px;*/
-}
 
 #title {
-  padding: 32px 0;
+  padding: 24px 0;
   margin: 0;
   color: white;
   background-color: transparent;
-  /*font-family: Montserrat, OpenSans, Roboto, "Helvetica Neue", sans-serif;*/
-  /*color: #72ebfe;*/
 }
 
 app-section {
-  margin-bottom: 32px;
+  /*margin-bottom: 32px;*/
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#security-privacy app-section {
-  /*max-width: 400px;*/
-  /*margin: 16px;*/
-  /*justify-content: center;*/
-  /*align-items: flex-start;*/
+#security-privacy-wrapper {
+  background-color: #f0f0f0;
+  margin-top: 32px;
+}
+
+/*::ng-deep app-section #title {*/
+/*  border-top: 4px solid #73edff;*/
+/*}*/
+
+::ng-deep #security-privacy #title {
+  border-top: none;
 }

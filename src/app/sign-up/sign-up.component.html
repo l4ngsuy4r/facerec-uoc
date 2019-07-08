@@ -1,15 +1,15 @@
 <div id="left">
   <div id="logo-wrapper">
-    <img src="/assets/uoc-logo2.jpg" id="logo" />
-    <h1 id="header">Reconocimiento facial</h1>
+    <img src="assets/logo-uoc-default.png" id="logo" />
+    <h2 id="header">Sistema de Reconocimiento Facial</h2>
   </div>
   <div id="registration-wrapper">
-    <mat-divider></mat-divider>
+    <!--    <mat-divider></mat-divider>-->
     <div id="stepper-wrapper">
       <h1 id="title">¡Regístrate!</h1>
       <app-stepper></app-stepper>
     </div>
-    <mat-divider></mat-divider>
+    <!--    <mat-divider></mat-divider>-->
   </div>
   <!--  <mat-divider></mat-divider>-->
   <app-section title="1. Registro" image="assets/uoc1.png">
@@ -17,32 +17,34 @@
     ordenador. Así podremos crear el modelo biométrico de tu cara. Durante el
     curso utilizaremos este modelo para contrastar tu identidad.
   </app-section>
-  <mat-divider></mat-divider>
+  <!--  <mat-divider></mat-divider>-->
   <app-section title="2. Monitorización" image="assets/uoc2.png" reverse>
     Durante la realización de las actividades, el sistema captará mágenes
     aleatoriamente. Estas imágenes se enviarán al servidor de Smowltech para
     verificar tu identidad. Para ello, es necesario que autorices la aplicación
     a utilizar tu cámara web.
   </app-section>
-  <mat-divider></mat-divider>
+  <!--  <mat-divider></mat-divider>-->
   <app-section title="3. Resultados" image="assets/uoc3.png">
     Los resultados estarán disponibles en 24 horas como máximo. Las imágenes se
     revisarán en caso de que hubiera alguna incidencia o reclamación.
   </app-section>
-  <mat-divider></mat-divider>
-  <div id="security-privacy">
-    <app-section title="Seguridad">
-      Las imágenes se envían siempre con un protocolo de seguridad HTTPS y por
-      canales seguros y cifrados. Además, solo se identifican con un código
-      (nunca con datos de carácter personal). Todas las imágenes se eliminarán
-      cuando termine el semestre.
-    </app-section>
-    <div id="spacer"></div>
-    <app-section title="Privacidad">
-      La UOC sólo revisará las imágenes en los casos de incidencia o reclamación
-      garantizando siempre la seguridad y privacidad de las mismas y el
-      cumplimiento del RGPD. Si se detecta algún comportamiento no autorizado,
-      será comunicado a la UOC.
-    </app-section>
+  <div id="security-privacy-wrapper">
+    <!--        <mat-divider></mat-divider>-->
+    <div id="security-privacy">
+      <app-section title="Seguridad">
+        Las imágenes se envían siempre con un protocolo de seguridad HTTPS y por
+        canales seguros y cifrados. Además, solo se identifican con un código
+        (nunca con datos de carácter personal). Todas las imágenes se eliminarán
+        cuando termine el semestre.
+      </app-section>
+      <div id="spacer"></div>
+      <app-section title="Privacidad">
+        La UOC sólo revisará las imágenes en los casos de incidencia o
+        reclamación garantizando siempre la seguridad y privacidad de las mismas
+        y el cumplimiento del RGPD. Si se detecta algún comportamiento no
+        autorizado, será comunicado a la UOC.
+      </app-section>
+    </div>
   </div>
 </div>

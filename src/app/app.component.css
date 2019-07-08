@@ -1,0 +1,39 @@
+::ng-deep button.button {
+  display: block;
+}
+
+::ng-deep button.button span {
+  font-family: Bulo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 39px;
+}
+
+::ng-deep button.button mat-icon {
+  line-height: 24px;
+  margin-right: 5px;
+}
+
+::ng-deep button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button {
+  background-color: #38ff90;
+}
+
+::ng-deep button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button span {
+  color:#000078;
+  font-family: Bulo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 39px;
+}
+
+::ng-deep button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button {
+  border-color: white;
+}
+
+::ng-deep button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button span {
+  color: white;
+  font-family: Bulo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 39px;
+}
