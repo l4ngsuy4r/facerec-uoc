@@ -13,10 +13,13 @@ img {
   /*font-family: Montserrat, sans-serif;*/
   color: #010179;
   /*color: #2e3454;*/
-
   border-top: 4px solid #73edff;
-  line-height: 32px;
+  line-height: 36px;
   margin-bottom: 0;
+}
+
+p {
+  color: #010179;
 }
 
 #spacer {
