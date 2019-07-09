@@ -1,12 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  /*background-color: #f0f0f0;*/
   line-height: 1.5;
-  font-family: Trola, serif;
-  font-size: 20px;
+  font-size: 22px;
+}
+
+@font-face {
+  font-family: 'UOCSans';
+  src: url('/assets/fonts/uoc-sans/UOCSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UOCSans';
+  src: url('/assets/fonts/uoc-sans/UOCSans-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'UOCSans';
+  src: url('/assets/fonts/uoc-sans/UOCSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UOCSans';
+  src: url('/assets/fonts/uoc-sans/UOCSans-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'UOCSerif';
+  src: url('/assets/fonts/uoc-serif/UOCSerif-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UOCSerif';
+  src: url('/assets/fonts/uoc-serif/UOCSerif-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'UOCSerif';
+  src: url('/assets/fonts/uoc-serif/UOCSerif-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UOCSerif';
+  src: url('/assets/fonts/uoc-serif/UOCSerif-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* width */
@@ -29,31 +86,17 @@ body {
   background: #c3c3c3;
 }
 
-@font-face {
-  font-family: "Bulo";
-  src: url("/assets/fonts/bulo/Bulo W03 Bold.woff2") format('woff2');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Bulo";
-  src: url("/assets/fonts/bulo/Bulo W03 Regular.woff2") format('woff2');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Trola";
-  src: url("/assets/fonts/trola/Trola W03 Regular.woff2") format('woff2');
-  font-weight: 400;
-}
-
 * {
-  /*font-family: Trola, serif;*/
-  font-family: Bulo, sans-serif;
+  font-family: UOCSans, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Bulo, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: UOCSans, sans-serif;
 }
 
 .center-text {
@@ -61,7 +104,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .center-block {
-  /*display: block;*/
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: auto;
+  margin-right: auto;
 }

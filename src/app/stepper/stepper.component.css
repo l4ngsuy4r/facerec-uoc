@@ -14,14 +14,35 @@ mat-horizontal-stepper {
 a {
   color: #73edff;
 }
+
+mat-checkbox.mat-checkbox {
+  display: block;
+  text-align: center;
+  margin: 24px 0;
+}
+
+button[mat-stroked-button].mat-stroked-button span {
+  font-family: UOCSans, sans-serif !important;
+  font-size: 18px;
+}
+
+p {
+  text-align: center;
+}
+
+.margin-x {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 ::ng-deep .mat-step-header div.mat-step-label {
   color: white;
-  font-family: Bulo, sans-serif;
+  font-family: UOCSans, sans-serif;
   font-size: 16px;
 }
 
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon span {
-  font-family: Bulo, sans-serif;
+  font-family: UOCSans, sans-serif;
 }
 
 ::ng-deep .mat-step-header .mat-step-icon {
@@ -48,30 +69,4 @@ a {
 
 ::ng-deep .mat-checkbox-frame {
   border-color: white;
-}
-
-mat-checkbox.mat-checkbox {
-  display: block;
-  text-align: center;
-  margin: 24px 0;
-}
-
-/*button[mat-stroked-button].mat-stroked-button {*/
-/*  display: block;*/
-/*  border-color: #73edff;*/
-/*  margin: 32px auto;*/
-/*}*/
-
-button[mat-stroked-button].mat-stroked-button span {
-  font-family: Bulo, sans-serif !important;
-  font-size: 18px;
-}
-
-p {
-  text-align: center;
-}
-
-.margin-x {
-  margin-top: 24px;
-  margin-bottom: 24px;
 }

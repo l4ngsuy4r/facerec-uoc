@@ -1,20 +1,8 @@
 <form [formGroup]="stepperForm">
   <mat-horizontal-stepper linear #stepper>
-    <mat-step
-      matRipple
-      matRippleColor="#fff"
-      [stepControl]="stepperForm.controls.step1"
-      [editable]="false"
-    >
+    <!--     terminos y condiciones -->
+    <mat-step [stepControl]="stepperForm.controls.step1" [editable]="false">
       <ng-template matStepLabel>Acepta las condiciones</ng-template>
-      <!--      <p>-->
-      <!--        Antes de registrarte, es necesario que leas y aceptes nuestros-->
-      <!--        <a-->
-      <!--          href="https://www.smowltech.net/firma/conditions_GDPR_1_es.html"-->
-      <!--          target="_blank"-->
-      <!--          >términos y condiciones</a-->
-      <!--        >.-->
-      <!--      </p>-->
       <mat-checkbox formControlName="step1"
         >He leído y acepto los
         <a
@@ -25,21 +13,23 @@
       >
     </mat-step>
 
+    <!--     acceso camara -->
     <mat-step [stepControl]="stepperForm.controls.step2" [editable]="false">
       <ng-template matStepLabel>Habilita la cámara</ng-template>
-      <!--      <p>-->
-      <!--        Al hacer click en el botón, es posible que tengas que aceptar un diálogo-->
-      <!--        como éste:-->
-      <!--      </p>-->
-      <!--      <img src="/assets/cam-access.png" class="mat-elevation-z1" />-->
       <p>
         Al hacer click en el botón, deberás aceptar un diálogo emergente.
       </p>
-      <button mat-stroked-button type="button" class="button stroked-button inverse-button center-block" (click)="getCamAccess()">
+      <button
+        mat-stroked-button
+        type="button"
+        class="button stroked-button inverse-button center-block"
+        (click)="getCamAccess()"
+      >
         SOLICITAR ACCESO
       </button>
     </mat-step>
 
+    <!--     registro facial-->
     <mat-step [stepControl]="stepperForm.controls.step3" [editable]="false">
       <ng-template matStepLabel>Hazte las fotos</ng-template>
       <app-picture-registration
@@ -48,6 +38,7 @@
       ></app-picture-registration>
     </mat-step>
 
+    <!--    proceso completado -->
     <mat-step [editable]="false">
       <ng-template matStepLabel>¡Listo!</ng-template>
       <p class="margin-x">¡Enhorabuena! Tus datos ya estan en el sistema.</p>

@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core'
+import { Component, HostBinding, Input } from '@angular/core'
 import { coerceBooleanProperty } from '@angular/cdk/coercion'
 
 @Component({
@@ -6,7 +6,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion'
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.css']
 })
-export class SectionComponent implements OnInit {
+export class SectionComponent {
   @Input() title: string
   @Input() image: string
 
@@ -25,8 +25,4 @@ export class SectionComponent implements OnInit {
   get flexFlow (): string {
     return 'row' + (this.reverse ? '-reverse' : '') + ' nowrap'
   }
-
-  constructor () {}
-
-  ngOnInit () {}
 }

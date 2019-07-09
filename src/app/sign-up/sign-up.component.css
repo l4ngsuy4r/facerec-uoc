@@ -1,15 +1,4 @@
-:host {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 #stepper-wrapper {
-  width: 800px;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 16px;
@@ -35,7 +24,7 @@
 }
 
 #registration-wrapper {
-  background: #000078 url('/assets/uoc-bg.jpg') center;
+  background: #000078 url('/assets/images/uoc-fondo.jpg') center;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -44,12 +33,9 @@
 
 div.top-bar-wrapper {
   background: #73edff;
-  /*height: 100%;*/
-  /*width: 100%;*/
 }
 
 #registration-wrapper mat-divider {
-  width: 800px;
   margin-left: auto;
   margin-right: auto;
   height: 0;
@@ -57,16 +43,12 @@ div.top-bar-wrapper {
 }
 
 #logo {
-  height: 72px;
-  display: block;
-  margin: 8px 0 8px -97px;
+  height: 100%;
 }
 
 #top-bar {
-  height: 56px;
-  margin: 8px auto;
-  max-width: 800px;
-  width: 800px;
+  height: 72px;
+  margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -76,21 +58,12 @@ div.top-bar-wrapper {
 #header {
   color: #000078;
   margin-left: 8px;
-  font-family: Trola, serif;
-  /*font-weight: 400;*/
+  font-family: UOCSerif, serif;
   font-size: 32px;
-
-  /*border-bottom: 4px solid #73edff;*/
+  white-space: nowrap;
   display: block;
   width: 100%;
-  padding: 16px 0;
-  line-height: 32px;
-}
-
-#left {
-  flex-grow: 1;
-  min-height: 100%;
-  overflow-x: auto;
+  line-height: 30px;
 }
 
 #security-privacy {
@@ -103,14 +76,6 @@ div.top-bar-wrapper {
   margin-right: auto;
   padding-bottom: 32px;
   padding-top: 24px;
-}
-
-mat-divider {
-  /*border-top: 2px solid #000078;*/
-  /*border-bottom: 2px solid #000078;*/
-  /*width: 800px;*/
-  /*margin-right: auto;*/
-  /*margin-left: auto;*/
 }
 
 #spacer {
@@ -126,7 +91,6 @@ mat-divider {
 }
 
 app-section {
-  /*margin-bottom: 32px;*/
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -136,10 +100,6 @@ app-section {
   background-color: #f0f0f0;
   margin-top: 32px;
 }
-
-/*::ng-deep app-section #title {*/
-/*  border-top: 4px solid #73edff;*/
-/*}*/
 
 ::ng-deep #security-privacy #title {
   border-top: none;
@@ -154,13 +114,9 @@ app-section {
     max-width: 100%;
     width: 100%;
   }
-  #logo {
-    margin: 8px 0;
-  }
 }
 
 @media (min-width: 801px) and (max-width: 1600px) {
-  #top-bar,
   #security-privacy,
   app-section,
   #registration-wrapper mat-divider,
@@ -168,15 +124,20 @@ app-section {
     max-width: 800px;
     width: 800px;
   }
+  #top-bar {
+    width: 992px;
+  }
 }
 
 @media (min-width: 1601px) {
-  #top-bar,
   #security-privacy,
   app-section,
   #registration-wrapper mat-divider,
   #stepper-wrapper {
     max-width: 50%;
     width: 50%;
+  }
+  #top-bar {
+    width: calc(50% + 192px);
   }
 }
