@@ -83,6 +83,7 @@ div.top-bar-wrapper {
   display: block;
   width: 100%;
   line-height: 30px;
+  font-weight: normal;
 }
 
 #security-privacy {
@@ -109,7 +110,7 @@ div.top-bar-wrapper {
 
 app-section {
   max-width: 800px;
-  margin: 64px auto;
+  margin: 48px auto;
 }
 
 #security-privacy-wrapper {
