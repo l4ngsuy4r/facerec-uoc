@@ -10,7 +10,9 @@
       [disabled]="pictures.length === numberOfPics"
       autofocus
     >
-      <mat-icon>camera_alt</mat-icon> HACER FOTO ({{(pictures ? pictures.length : '0') + '/' + numberOfPics}})
+      <mat-icon>camera_alt</mat-icon> HACER FOTO ({{
+        (pictures ? pictures.length : '0') + '/' + numberOfPics
+      }})
     </button>
     <button
       class="button stroked-button inverse-button"

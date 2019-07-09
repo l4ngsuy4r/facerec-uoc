@@ -14,11 +14,14 @@
   margin-right: 5px;
 }
 
-::ng-deep button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button {
+::ng-deep
+  button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button {
   background-color: #38ff90;
 }
 
-::ng-deep button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button span {
+::ng-deep
+  button[mat-flat-button].button.mat-flat-button.primary-button.inverse-button
+  span {
   color: #000078;
   font-family: UOCSans, sans-serif;
   font-weight: 400;
@@ -26,11 +29,14 @@
   line-height: 39px;
 }
 
-::ng-deep button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button {
+::ng-deep
+  button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button {
   border-color: white;
 }
 
-::ng-deep button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button span {
+::ng-deep
+  button[mat-stroked-button].button.mat-stroked-button.stroked-button.inverse-button
+  span {
   color: white;
   font-family: UOCSans, sans-serif;
   font-weight: 400;

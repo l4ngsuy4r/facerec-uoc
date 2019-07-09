@@ -5,7 +5,8 @@ import { SignUpComponent } from './sign-up/sign-up.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {
   MatButtonModule,
-  MatCheckboxModule, MatDialogModule,
+  MatCheckboxModule,
+  MatDialogModule,
   MatDividerModule,
   MatIconModule,
   MatStepperModule,
