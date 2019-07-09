@@ -66,6 +66,10 @@ p {
   margin-bottom: 24px;
 }
 
+p + button {
+  margin-bottom: 22px;
+}
+
 ::ng-deep .mat-step-header div.mat-step-label {
   color: white;
   font-family: UOCSans, sans-serif;
