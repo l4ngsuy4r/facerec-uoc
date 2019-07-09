@@ -9,6 +9,7 @@ img {
 mat-horizontal-stepper {
   background-color: transparent;
   color: white;
+  /*height: 600px;*/
 }
 
 a {
@@ -18,7 +19,7 @@ a {
 mat-checkbox.mat-checkbox {
   display: block;
   text-align: center;
-  margin: 24px 0;
+  /*margin: 48px 0 32px;*/
 }
 
 button[mat-stroked-button].mat-stroked-button span {
@@ -26,8 +27,38 @@ button[mat-stroked-button].mat-stroked-button span {
   font-size: 18px;
 }
 
+#cam-access-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px;
+}
+
 p {
   text-align: center;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  /*height: 424px !important;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+::ng-deep .mat-horizontal-stepper-content {
+  /*flex-grow: 1;*/
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .margin-x {
@@ -59,12 +90,12 @@ p {
   border-top-color: #73edff;
 }
 
-::ng-deep .mat-step-header .mat-step-label.mat-step-label-active  {
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
   color: white;
 }
 
 ::ng-deep div.mat-step-label.mat-step-label-active.mat-step-label-selected {
-  color: #38ff90
+  color: #38ff90;
 }
 
 ::ng-deep .mat-checkbox-frame {

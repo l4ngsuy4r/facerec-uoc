@@ -5,10 +5,9 @@ import {
   EventEmitter,
   OnDestroy,
   Output,
-  QueryList,
-  ViewChild,
-  ViewChildren
+  ViewChild
 } from '@angular/core'
+import { AppService, ValidateRequest } from '../app.service'
 
 @Component({
   selector: 'app-picture-registration',
@@ -16,23 +15,22 @@ import {
   styleUrls: ['./picture-registration.component.css']
 })
 export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
-  @Output() completed = new EventEmitter()
+  @Output() private complete = new EventEmitter<string[]>()
 
   @ViewChild('player')
   private playerRef: ElementRef<HTMLVideoElement>
   @ViewChild('canvas')
   private canvasRef: ElementRef<HTMLCanvasElement>
 
-  @ViewChildren(HTMLImageElement)
-  private images: QueryList<ElementRef<HTMLImageElement>>
-
   private player: HTMLVideoElement
   private canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D
 
-  private readonly numberOfPics = 3
+  readonly numberOfPics = 3
 
   pictures: string[] = []
+
+  constructor (private service: AppService) {}
 
   ngAfterViewInit () {
     this.player = this.playerRef.nativeElement
@@ -69,16 +67,18 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
   }
 
   private submit () {
-    console.log({
-      picture1: this.pictures[0],
-      picture2: this.pictures[1],
-      picture3: this.pictures[2]
+    this.validate()
+  }
+
+  validate () {
+    const body: ValidateRequest = {
+      uid: 'yeeeha',
+      pics: this.pictures.map(pic => pic.split(',')[1])
+    }
+    this.service.validate(body).subscribe(response => {
+      console.log(response)
+      // this.complete.emit(this.pictures)
+      // this.reset()
     })
-    this.completed.emit({
-      picture1: this.pictures[0],
-      picture2: this.pictures[1],
-      picture3: this.pictures[2]
-    })
-    this.reset()
   }
 }

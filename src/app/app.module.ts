@@ -19,6 +19,7 @@ import { SectionComponent } from './section/section.component'
 import { PictureRegistrationComponent } from './picture-registration/picture-registration.component'
 import { GalleryComponent } from './gallery/gallery.component'
 import { BadPicturesComponent } from './bad-pictures/bad-pictures.component'
+import { HttpClient, HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BadPicturesComponent } from './bad-pictures/bad-pictures.component'
     MatDividerModule,
     MatToolbarModule,
     MatStepperModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

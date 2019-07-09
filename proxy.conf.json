@@ -1,0 +1,38 @@
+{
+  "/api": {
+    "target": "https://wmu05f19af.execute-api.us-east-1.amazonaws.com/default/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/open": {
+    "target": "https://t6f2w25x9j.execute-api.us-east-1.amazonaws.com/default/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/open": ""
+    }
+  },
+  "/testing": {
+    "target": "https://1z4jk6cgv4.execute-api.us-east-1.amazonaws.com/test-lkjh8293wd0f782i89dfu2389d8wd89/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/testing": ""
+    }
+  },
+  "/local": {
+    "target": "http://localhost:8080/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/local": ""
+    }
+  }
+}

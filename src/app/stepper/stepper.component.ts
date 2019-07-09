@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatStepper } from '@angular/material'
 import { Subscription } from 'rxjs'
 
@@ -38,9 +38,9 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
       status => {
         if (status === 'VALID') {
           if (this.camAccess) {
-            this.stepperForm.controls.step2.setValue(true)
-            this.stepper.selectedIndex = 2
-            // this.stepper.next()
+            // this.stepperForm.controls.step2.setValue(true)
+            // this.stepper.selectedIndex = 2
+            this.stepper.next()
           } else this.stepper.next()
         }
       }

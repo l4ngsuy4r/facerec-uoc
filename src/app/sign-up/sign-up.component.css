@@ -11,6 +11,13 @@
 #top-bar-wrapper {
   display: flex;
   flex-flow: row nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 9999;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #blue {
@@ -21,14 +28,21 @@
 #white {
   background: white;
   flex-grow: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #registration-wrapper {
+  margin-top: 72px;
   background: #000078 url('/assets/images/uoc-fondo.jpg') center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
+  padding: 32px 0;
+  /*height: 600px;*/
 }
 
 div.top-bar-wrapper {
@@ -40,6 +54,11 @@ div.top-bar-wrapper {
   margin-right: auto;
   height: 0;
   border-color: #73edff;
+}
+
+#locale {
+  margin: 0 24px;
+  white-space: nowrap;
 }
 
 #logo {
@@ -57,7 +76,7 @@ div.top-bar-wrapper {
 
 #header {
   color: #000078;
-  margin-left: 8px;
+  margin-left: 9px;
   font-family: UOCSerif, serif;
   font-size: 32px;
   white-space: nowrap;
@@ -74,13 +93,11 @@ div.top-bar-wrapper {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 32px;
-  padding-top: 24px;
 }
 
 #spacer {
-  min-width: 32px;
-  width: 32px;
+  min-width: 64px;
+  width: 64px;
 }
 
 #title {
@@ -92,13 +109,31 @@ div.top-bar-wrapper {
 
 app-section {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 64px auto;
 }
 
 #security-privacy-wrapper {
   background-color: #f0f0f0;
   margin-top: 32px;
+}
+
+.locale-separator {
+  color: #010179;
+}
+
+.locale-button {
+  /*font-weight: bold;*/
+  min-width: 0;
+  /*padding: 0 4px;*/
+  /*margin: 4px;*/
+  font-size: 22px;
+  text-decoration: none;
+  color: #010179;
+  transition: 0.2s ease color;
+}
+
+.locale-button:hover {
+  color: #38ff90;
 }
 
 ::ng-deep #security-privacy #title {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Inject, LOCALE_ID } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'face-rec'
+  // languageList = [
+  //   { code: 'en', label: 'English' },
+  //   { code: 'cat', label: 'Catalan' },
+  //   { code: 'es', label: 'Español' }
+  // ]
+  // constructor (@Inject(LOCALE_ID) protected localeId: string) {}
 }

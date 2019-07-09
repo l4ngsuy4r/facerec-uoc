@@ -20,9 +20,9 @@
         Al hacer click en el botón, deberás aceptar un diálogo emergente.
       </p>
       <button
-        mat-stroked-button
+        mat-flat-button
         type="button"
-        class="button stroked-button inverse-button center-block"
+        class="button primary-button inverse-button center-block"
         (click)="getCamAccess()"
       >
         SOLICITAR ACCESO
@@ -34,7 +34,7 @@
       <ng-template matStepLabel>Hazte las fotos</ng-template>
       <app-picture-registration
         *ngIf="stepperForm.controls.step2.value"
-        (completed)="stepperForm.controls.step3.setValue(true)"
+        (complete)="stepperForm.controls.step3.setValue(true)"
       ></app-picture-registration>
     </mat-step>
 
