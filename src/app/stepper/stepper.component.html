@@ -1,6 +1,6 @@
 <form [formGroup]="stepperForm">
   <mat-horizontal-stepper linear #stepper>
-    <!--     terminos y condiciones -->
+    <!-- aceptar condiciones -->
     <mat-step [stepControl]="stepperForm.controls.step1" [editable]="false">
       <ng-template matStepLabel>Acepta las condiciones</ng-template>
       <mat-checkbox formControlName="step1"
@@ -13,7 +13,7 @@
       >
     </mat-step>
 
-    <!--     acceso camara -->
+    <!-- habilitar camara -->
     <mat-step [stepControl]="stepperForm.controls.step2" [editable]="false">
       <ng-template matStepLabel>Habilita la cámara</ng-template>
       <p>
@@ -29,19 +29,38 @@
       </button>
     </mat-step>
 
-    <!--     registro facial-->
-    <mat-step [stepControl]="stepperForm.controls.step3" [editable]="false">
+    <!-- hacer fotos -->
+    <mat-step #camStep [stepControl]="stepperForm.controls.step3" [editable]="true">
       <ng-template matStepLabel>Hazte las fotos</ng-template>
       <app-picture-registration
         *ngIf="stepperForm.controls.step2.value"
-        (complete)="stepperForm.controls.step3.setValue(true)"
+        (complete)="
+          this.images = $event; stepperForm.controls.step3.setValue(true)
+        "
       ></app-picture-registration>
     </mat-step>
 
-    <!--    proceso completado -->
+    <!-- confirmar fotos -->
     <mat-step [editable]="false">
-      <ng-template matStepLabel>¡Listo!</ng-template>
-      <p class="margin-x">¡Enhorabuena! Tus datos ya estan en el sistema.</p>
+      <ng-template matStepLabel>Confirma</ng-template>
+      <app-gallery [images]="images"></app-gallery>
+      <div id="buttons">
+        <button
+          matStepperPrevious
+          type="button"
+          mat-stroked-button
+          class="button stroked-button inverse-button"
+        >
+          REPETIR FOTOS
+        </button>
+        <button
+          mat-flat-button
+          type="button"
+          class="button primary-button inverse-button"
+        >
+          ENVIAR
+        </button>
+      </div>
     </mat-step>
   </mat-horizontal-stepper>
 </form>

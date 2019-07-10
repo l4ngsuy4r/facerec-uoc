@@ -70,10 +70,21 @@ p + button {
   margin-bottom: 22px;
 }
 
+#buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons > button {
+  margin: 24px 24px 24px 0;
+}
+
 ::ng-deep .mat-step-header div.mat-step-label {
   color: white;
   font-family: UOCSans, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon span {
@@ -87,6 +98,10 @@ p + button {
 
 ::ng-deep .mat-step-header .mat-step-icon-selected {
   background-color: #38ff90;
+  color: #010179;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit   {
   color: #010179;
 }
 

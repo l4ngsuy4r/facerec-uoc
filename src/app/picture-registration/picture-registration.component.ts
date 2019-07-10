@@ -3,11 +3,11 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   OnDestroy,
   Output,
   ViewChild
 } from '@angular/core'
-import { AppService, ValidateRequest } from '../app.service'
 
 @Component({
   selector: 'app-picture-registration',
@@ -15,6 +15,7 @@ import { AppService, ValidateRequest } from '../app.service'
   styleUrls: ['./picture-registration.component.css']
 })
 export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
+  @Input() numberOfPics = 3
   @Output() private complete = new EventEmitter<string[]>()
 
   @ViewChild('player')
@@ -26,25 +27,18 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
   private canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D
 
-  readonly numberOfPics = 3
-
   pictures: string[] = []
-
-  constructor (private service: AppService) {}
 
   ngAfterViewInit () {
     this.player = this.playerRef.nativeElement
     this.canvas = this.canvasRef.nativeElement
     this.context = this.canvas.getContext('2d')
-
-    // start camera stream
     navigator.mediaDevices
       .getUserMedia({ video: true })
       .then(stream => (this.player.srcObject = stream))
   }
 
   ngOnDestroy () {
-    // stop camera stream
     (this.player.srcObject as MediaStream)
       .getVideoTracks()
       .forEach(track => track.stop())
@@ -62,23 +56,8 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
     if (this.pictures.length === this.numberOfPics) this.submit()
   }
 
-  reset () {
-    this.pictures = []
-  }
-
   private submit () {
-    this.validate()
-  }
-
-  validate () {
-    const body: ValidateRequest = {
-      uid: 'yeeeha',
-      pics: this.pictures.map(pic => pic.split(',')[1])
-    }
-    this.service.validate(body).subscribe(response => {
-      console.log(response)
-      // this.complete.emit(this.pictures)
-      // this.reset()
-    })
+    this.complete.emit(this.pictures)
+    this.pictures = []
   }
 }

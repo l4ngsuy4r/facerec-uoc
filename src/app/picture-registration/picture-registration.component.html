@@ -1,28 +1,14 @@
 <div id="wrapper">
   <div id="video-wrapper">
+    <div id="chip">
+      <div>{{pictures.length}}</div>
+      <div id="chip-bar">/</div>
+      <div>{{numberOfPics}}</div>
+    </div>
     <video #player autoplay></video>
-  </div>
-  <div id="buttons">
-    <button
-      class="button inverse-button primary-button"
-      mat-flat-button
-      (click)="capture()"
-      [disabled]="pictures.length === numberOfPics"
-      autofocus
-    >
-      <mat-icon>camera_alt</mat-icon> HACER FOTO ({{
-        (pictures ? pictures.length : '0') + '/' + numberOfPics
-      }})
-    </button>
-    <button
-      class="button stroked-button inverse-button"
-      mat-stroked-button
-      (click)="reset()"
-      [disabled]="pictures.length === 0"
-    >
-      <mat-icon>undo</mat-icon> DESCARTAR FOTOS
+    <button mat-fab id="camera-button" color="accent" (click)="capture()" [disabled]="pictures.length >= numberOfPics">
+      <mat-icon>camera_alt</mat-icon>
     </button>
   </div>
 </div>
-<app-gallery [images]="pictures"></app-gallery>
 <canvas #canvas width="320" height="240"></canvas>

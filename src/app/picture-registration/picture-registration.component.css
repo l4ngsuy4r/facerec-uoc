@@ -3,8 +3,15 @@ canvas {
 }
 
 video {
-  height: 180px;
-  width: 240px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9997;
+  width: 360px;
+  height: 270px;
+  border-radius: 8px;
 }
 
 #wrapper {
@@ -14,49 +21,57 @@ video {
 }
 
 #video-wrapper {
-  width: 240px;
-  overflow: hidden;
+  position: relative;
+  width: 360px;
+  height: 270px;
   border-radius: 8px;
-  height: 180px;
-  display: flex;
   margin: 24px;
+  overflow: visible;
 }
 
-#discard-button {
-  color: white;
-}
-
-::ng-deep #camera-button span {
-  font-family: UOCSans, sans-serif;
-  font-size: 18px;
-  line-height: 39px;
-}
-
-::ng-deep #camera-button mat-icon {
+#chip {
+  width: 56px;
+  position: absolute;
+  top: -14px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 7px 12px;
+  border-radius: 16px;
+  background-color: white;
+  color: #000078;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  height: 32px;
   line-height: 24px;
-  margin-right: 4px;
+  box-sizing: border-box;
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+
+#chip-bar {
+  position: center;
+}
+
+#chip > * {
+  /*pointer-events: none;*/
 }
 
 #camera-button {
+  position: absolute;
+  bottom: -26px;
+  margin-left: calc(50% - 28px);
+  margin-right: calc(50% - 28px);
   background-color: #38ff90;
   color: #000078;
+  z-index: 9998;
 }
 
-#buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 180px;
-  max-height: 180px;
-  margin: 32px;
-  /*align-items: flex-start;*/
+::ng-deep #camera-button * {
+  z-index: 9999 !important;
 }
 
-#buttons > * {
-  flex-shrink: 1;
-  margin: 0;
-}
-
-/*#glass{*/
-/*  margin-left: -220px;*/
-/*}*/

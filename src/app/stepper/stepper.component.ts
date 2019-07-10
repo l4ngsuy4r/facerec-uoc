@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatStepper } from '@angular/material'
 import { Subscription } from 'rxjs'
+import { ValidateRequest } from '../app.service'
 
 @Component({
   selector: 'app-stepper',
@@ -10,6 +11,7 @@ import { Subscription } from 'rxjs'
 })
 export class StepperComponent implements AfterViewInit, OnDestroy {
   stepperForm: FormGroup
+  images: string[] = []
 
   private camAccess: boolean
   private step1Changes: Subscription
@@ -68,4 +70,14 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
       .getUserMedia({ video: true })
       .then(() => this.stepperForm.controls.step2.setValue(true))
   }
+
+  // complete () {
+  //   const body: ValidateRequest = {
+  //     uid: 'yeeeha',
+  //     pics: this.pictures.map(pic => pic.split(',')[1])
+  //   }
+  //   this.service.complete(body).subscribe(response => {
+  //     console.log(response)
+  //   })
+  // }
 }
