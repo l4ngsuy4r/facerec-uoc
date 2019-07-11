@@ -1,12 +1,18 @@
 <div id="wrapper">
   <div id="video-wrapper">
     <div id="chip">
-      <div>{{pictures.length}}</div>
+      <div class="chip-number">{{ pictures.length }}</div>
       <div id="chip-bar">/</div>
-      <div>{{numberOfPics}}</div>
+      <div>{{ numberOfPics }}</div>
     </div>
     <video #player autoplay></video>
-    <button mat-fab id="camera-button" color="accent" (click)="capture()" [disabled]="pictures.length >= numberOfPics">
+    <button
+      mat-fab
+      id="camera-button"
+      color="accent"
+      (click)="capture()"
+      [disabled]="pictures.length >= numberOfPics"
+    >
       <mat-icon>camera_alt</mat-icon>
     </button>
   </div>

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatStepper } from '@angular/material'
 import { Subscription } from 'rxjs'
-import { ValidateRequest } from '../app.service'
+import { AppService, ValidateRequest } from '../app.service'
 
 @Component({
   selector: 'app-stepper',
@@ -12,6 +12,9 @@ import { ValidateRequest } from '../app.service'
 export class StepperComponent implements AfterViewInit, OnDestroy {
   stepperForm: FormGroup
   images: string[] = []
+  loading = false
+  error = false
+  success = false
 
   private camAccess: boolean
   private step1Changes: Subscription
@@ -20,7 +23,7 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('stepper') stepper: MatStepper
 
-  constructor (private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private service: AppService) {
     navigator.mediaDevices.enumerateDevices().then(devices => {
       devices
         .filter(device => device.kind === 'videoinput')
@@ -35,14 +38,13 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
     })
   }
 
-  ngAfterViewInit () {
+  ngAfterViewInit() {
     this.step1Changes = this.stepperForm.controls.step1.statusChanges.subscribe(
       status => {
         if (status === 'VALID') {
           if (this.camAccess) {
-            // this.stepperForm.controls.step2.setValue(true)
-            // this.stepper.selectedIndex = 2
-            this.stepper.next()
+            this.stepperForm.controls.step2.setValue(true)
+            this.stepper.selectedIndex = 2
           } else this.stepper.next()
         }
       }
@@ -54,30 +56,37 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
     )
     this.step3Changes = this.stepperForm.controls.step3.statusChanges.subscribe(
       status => {
-        if (status === 'VALID') this.stepper.next()
+        if (status === 'VALID') {
+          this.error = false
+          this.stepper.next()
+        }
       }
     )
   }
 
-  ngOnDestroy (): void {
+  ngOnDestroy(): void {
     if (this.step1Changes) this.step1Changes.unsubscribe()
     if (this.step2Changes) this.step2Changes.unsubscribe()
     if (this.step3Changes) this.step3Changes.unsubscribe()
   }
 
-  getCamAccess () {
+  getCamAccess() {
     navigator.mediaDevices
       .getUserMedia({ video: true })
       .then(() => this.stepperForm.controls.step2.setValue(true))
   }
 
-  // complete () {
-  //   const body: ValidateRequest = {
-  //     uid: 'yeeeha',
-  //     pics: this.pictures.map(pic => pic.split(',')[1])
-  //   }
-  //   this.service.complete(body).subscribe(response => {
-  //     console.log(response)
-  //   })
-  // }
+  validate() {
+    this.loading = true
+    const body: ValidateRequest = {
+      uid: 'yeeeha',
+      pics: this.images.map(pic => pic.split(',')[1])
+    }
+    this.service.validate(body).subscribe(response => {
+      console.log(response)
+      this.loading = false
+      if (response.registrationErrorList.length) this.error = true
+      else this.success = true
+    })
+  }
 }

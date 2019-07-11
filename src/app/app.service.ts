@@ -6,14 +6,13 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class AppService {
-  constructor (private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  validate (body: ValidateRequest): Observable<ValidateResponse> {
-    const headers = new HttpHeaders({
-      'x-api-key': 'l4tbwudR2m151MP1ehyNGekLyaZbhTH1HSbmnQLh'
-    })
+  validate(body: ValidateRequest): Observable<ValidateResponse> {
     return this.http.post<ValidateResponse>('testing/UserRegistration', body, {
-      headers
+      headers: new HttpHeaders({
+        'x-api-key': 'l4tbwudR2m151MP1ehyNGekLyaZbhTH1HSbmnQLh'
+      })
     })
   }
 }

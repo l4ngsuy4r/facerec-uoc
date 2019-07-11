@@ -9,20 +9,25 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion'
 export class SectionComponent {
   @Input() title: string
   @Input() image: string
+  @Input() mode: 'horizontal' | 'vertical' = 'horizontal'
 
   private _reverse: boolean
 
-  get reverse (): boolean {
+  get reverse(): boolean {
     return this._reverse
   }
 
   @Input()
-  set reverse (value: boolean) {
+  set reverse(value: boolean) {
     this._reverse = coerceBooleanProperty(value)
   }
 
   @HostBinding('style.flex-flow')
-  get flexFlow (): string {
-    return 'row' + (this.reverse ? '-reverse' : '') + ' nowrap'
+  get flexFlow(): string {
+    return (
+      (this.mode === 'horizontal' ? 'row' : 'column') +
+      (this.mode === 'horizontal' && this.reverse ? '-reverse' : '') +
+      ' nowrap'
+    )
   }
 }

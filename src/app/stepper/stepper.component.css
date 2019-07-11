@@ -37,6 +37,13 @@ button[mat-stroked-button].mat-stroked-button span {
 p {
   text-align: center;
 }
+#error-message {
+  color: #ff7d87;
+}
+
+ul {
+  font-size: 18px;
+}
 
 ::ng-deep .mat-horizontal-content-container {
   /*height: 424px !important;*/
@@ -46,7 +53,7 @@ p {
 
 ::ng-deep .mat-horizontal-stepper-content {
   /*flex-grow: 1;*/
-  height: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +85,7 @@ p + button {
 }
 
 #buttons > button {
-  margin: 24px 24px 24px 0;
+  margin: 24px;
 }
 
 ::ng-deep .mat-step-header div.mat-step-label {
@@ -101,7 +108,7 @@ p + button {
   color: #010179;
 }
 
-::ng-deep .mat-step-header .mat-step-icon-state-edit   {
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
   color: #010179;
 }
 

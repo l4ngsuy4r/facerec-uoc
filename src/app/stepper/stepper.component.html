@@ -30,7 +30,11 @@
     </mat-step>
 
     <!-- hacer fotos -->
-    <mat-step #camStep [stepControl]="stepperForm.controls.step3" [editable]="true">
+    <mat-step
+      #camStep
+      [stepControl]="stepperForm.controls.step3"
+      [editable]="true"
+    >
       <ng-template matStepLabel>Hazte las fotos</ng-template>
       <app-picture-registration
         *ngIf="stepperForm.controls.step2.value"
@@ -43,24 +47,49 @@
     <!-- confirmar fotos -->
     <mat-step [editable]="false">
       <ng-template matStepLabel>Confirma</ng-template>
-      <app-gallery [images]="images"></app-gallery>
-      <div id="buttons">
-        <button
-          matStepperPrevious
-          type="button"
-          mat-stroked-button
-          class="button stroked-button inverse-button"
-        >
-          REPETIR FOTOS
-        </button>
-        <button
-          mat-flat-button
-          type="button"
-          class="button primary-button inverse-button"
-        >
-          ENVIAR
-        </button>
-      </div>
+      <ng-container [ngSwitch]="loading">
+        <mat-spinner *ngSwitchCase="true"></mat-spinner>
+        <ng-container *ngSwitchCase="false">
+          <app-gallery *ngIf="!error" [images]="images"></app-gallery>
+          <div *ngIf="error">
+            <p id="error-message">
+              Algo ha ido mal con tu registro. Por favor, repítelo.
+            </p>
+            <ul>
+              <li>
+                Asegúrate de que apareces centrado en el marco y mirándo a la
+                cámara.
+              </li>
+              <li>
+                Procura de que tu cara se vea claramente y que iluminación sea
+                adecuada.
+              </li>
+              <li>Evita usar accesorios que cubran tu cara y cabeza.</li>
+              <li>Debes estar sólo en las imágenes.</li>
+            </ul>
+          </div>
+          <div id="buttons">
+            <button
+              matStepperPrevious
+              type="button"
+              mat-stroked-button
+              class="button stroked-button inverse-button"
+            >
+              REPETIR FOTOS
+            </button>
+            <button
+              *ngIf="!error"
+              mat-flat-button
+              color="accent"
+              type="button"
+              class="button primary-button inverse-button"
+              (click)="validate()"
+            >
+              ENVIAR
+            </button>
+          </div>
+        </ng-container>
+      </ng-container>
     </mat-step>
   </mat-horizontal-stepper>
 </form>

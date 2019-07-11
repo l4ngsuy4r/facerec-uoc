@@ -11,10 +11,10 @@ import {
 
 @Component({
   selector: 'app-picture-registration',
-  templateUrl: './picture-registration.component.html',
-  styleUrls: ['./picture-registration.component.css']
+  templateUrl: './camera.component.html',
+  styleUrls: ['./camera.component.css']
 })
-export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
+export class CameraComponent implements AfterViewInit, OnDestroy {
   @Input() numberOfPics = 3
   @Output() private complete = new EventEmitter<string[]>()
 
@@ -29,7 +29,7 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
 
   pictures: string[] = []
 
-  ngAfterViewInit () {
+  ngAfterViewInit() {
     this.player = this.playerRef.nativeElement
     this.canvas = this.canvasRef.nativeElement
     this.context = this.canvas.getContext('2d')
@@ -38,13 +38,13 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
       .then(stream => (this.player.srcObject = stream))
   }
 
-  ngOnDestroy () {
-    (this.player.srcObject as MediaStream)
+  ngOnDestroy() {
+    ;(this.player.srcObject as MediaStream)
       .getVideoTracks()
       .forEach(track => track.stop())
   }
 
-  capture () {
+  capture() {
     this.context.drawImage(
       this.player,
       0,
@@ -56,7 +56,7 @@ export class PictureRegistrationComponent implements AfterViewInit, OnDestroy {
     if (this.pictures.length === this.numberOfPics) this.submit()
   }
 
-  private submit () {
+  private submit() {
     this.complete.emit(this.pictures)
     this.pictures = []
   }

@@ -1,52 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component'
-import { SignUpComponent } from './sign-up/sign-up.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {
   MatButtonModule,
-  MatCheckboxModule, MatChipsModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule, MatRippleModule,
-  MatStepperModule,
-  MatTooltipModule
+  MatCheckboxModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatStepperModule
 } from '@angular/material'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { StepperComponent } from './stepper/stepper.component'
 import { SectionComponent } from './section/section.component'
-import { PictureRegistrationComponent } from './picture-registration/picture-registration.component'
+import { CameraComponent } from './camera/camera.component'
 import { GalleryComponent } from './gallery/gallery.component'
-import { BadPicturesComponent } from './bad-pictures/bad-pictures.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
     StepperComponent,
     SectionComponent,
-    PictureRegistrationComponent,
+    CameraComponent,
     GalleryComponent,
-    BadPicturesComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     MatCheckboxModule,
-    MatTooltipModule,
-    MatDividerModule,
     MatStepperModule,
-    MatDialogModule,
-    HttpClientModule,
-    MatChipsModule,
-    MatRippleModule
+    MatProgressSpinnerModule
   ],
   providers: [],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

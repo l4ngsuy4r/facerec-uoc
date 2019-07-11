@@ -9,8 +9,8 @@ video {
   bottom: 0;
   left: 0;
   z-index: 9997;
-  width: 360px;
-  height: 270px;
+  width: 300px;
+  height: 225px;
   border-radius: 8px;
 }
 
@@ -22,11 +22,12 @@ video {
 
 #video-wrapper {
   position: relative;
-  width: 360px;
-  height: 270px;
+  width: 300px;
+  height: 225px;
   border-radius: 8px;
   margin: 24px;
   overflow: visible;
+  background-color: black;
 }
 
 #chip {
@@ -55,6 +56,11 @@ video {
 
 #chip-bar {
   position: center;
+  width: 4px;
+}
+
+.chip-number {
+  width: 4px;
 }
 
 #chip > * {
@@ -74,4 +80,3 @@ video {
 ::ng-deep #camera-button * {
   z-index: 9999 !important;
 }
-
