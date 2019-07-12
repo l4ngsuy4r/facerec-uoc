@@ -11,7 +11,7 @@ export class AppService {
   validate(body: ValidateRequest): Observable<ValidateResponse> {
     return this.http.post<ValidateResponse>('testing/UserRegistration', body, {
       headers: new HttpHeaders({
-        'x-api-key': 'l4tbwudR2m151MP1ehyNGekLyaZbhTH1HSbmnQLh'
+        'x-api-key': '3yu6vxRwsR5YOXzbHuwYf9aiClHvsYXN48npsIgd'
       })
     })
   }
