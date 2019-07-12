@@ -11,7 +11,7 @@
       id="camera-button"
       color="accent"
       (click)="capture()"
-      [disabled]="pictures.length >= numberOfPics"
+      [disabled]="loading || pictures.length >= numberOfPics"
     >
       <mat-icon>camera_alt</mat-icon>
     </button>

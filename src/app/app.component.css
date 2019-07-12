@@ -19,8 +19,6 @@
   right: 0;
   z-index: 9999;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 #blue {
@@ -39,7 +37,8 @@
 #registration-wrapper {
   position: relative;
   margin-top: 72px;
-  background: #000078 url('/assets/images/uoc-fondo.jpg') fixed center;
+  /*background: #000078 url('/assets/images/uoc-fondo.jpg') fixed center;*/
+  background: #000078 url('/assets/images/uoc-fondo.jpg') center;
   background-size: cover;
   display: flex;
   flex-direction: column;

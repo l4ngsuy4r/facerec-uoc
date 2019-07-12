@@ -28,6 +28,7 @@ export class CameraComponent implements AfterViewInit, OnDestroy {
   private context: CanvasRenderingContext2D
 
   pictures: string[] = []
+  loading = true
 
   ngAfterViewInit() {
     this.player = this.playerRef.nativeElement
@@ -35,7 +36,10 @@ export class CameraComponent implements AfterViewInit, OnDestroy {
     this.context = this.canvas.getContext('2d')
     navigator.mediaDevices
       .getUserMedia({ video: true })
-      .then(stream => (this.player.srcObject = stream))
+      .then(stream => {
+        this.player.srcObject = stream
+        this.loading = false
+      })
   }
 
   ngOnDestroy() {

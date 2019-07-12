@@ -47,49 +47,51 @@
     <!-- confirmar fotos -->
     <mat-step [editable]="false">
       <ng-template matStepLabel>Confirma</ng-template>
-      <ng-container [ngSwitch]="loading">
-        <mat-spinner *ngSwitchCase="true"></mat-spinner>
-        <ng-container *ngSwitchCase="false">
-          <app-gallery *ngIf="!error" [images]="images"></app-gallery>
-          <div *ngIf="error">
-            <p id="error-message">
-              Algo ha ido mal con tu registro. Por favor, repítelo.
-            </p>
-            <ul>
-              <li>
-                Asegúrate de que apareces centrado en el marco y mirándo a la
-                cámara.
-              </li>
-              <li>
-                Procura de que tu cara se vea claramente y que iluminación sea
-                adecuada.
-              </li>
-              <li>Evita usar accesorios que cubran tu cara y cabeza.</li>
-              <li>Debes estar sólo en las imágenes.</li>
-            </ul>
-          </div>
-          <div id="buttons">
-            <button
-              matStepperPrevious
-              type="button"
-              mat-stroked-button
-              class="button stroked-button inverse-button"
-            >
-              REPETIR FOTOS
-            </button>
-            <button
-              *ngIf="!error"
-              mat-flat-button
-              color="accent"
-              type="button"
-              class="button primary-button inverse-button"
-              (click)="validate()"
-            >
-              ENVIAR
-            </button>
-          </div>
-        </ng-container>
+      <ng-container [ngSwitch]="state">
+        <app-gallery *ngSwitchCase="'default'" [images]="images"></app-gallery>
+        <mat-spinner *ngSwitchCase="'loading'"></mat-spinner>
+        <div *ngSwitchCase="'error'">
+          <p id="error-message">
+            Algo ha ido mal con tu registro. Por favor, repítelo.
+          </p>
+          <ul>
+            <li>
+              Asegúrate de que apareces centrado en el marco y mirándo a la
+              cámara.
+            </li>
+            <li>
+              Procura de que tu cara se vea claramente y que iluminación sea
+              adecuada.
+            </li>
+            <li>Evita usar accesorios que cubran tu cara y cabeza.</li>
+            <li>Debes estar sólo en las imágenes.</li>
+          </ul>
+        </div>
+        <div *ngSwitchCase="'success'" id="success">
+          <h2>¡Enhorabuena! Ya has terminado.</h2>
+          <p>El proceso de registro se ha completado correctamente y tus datos ya están guardados en el sistema.</p>
+        </div>
       </ng-container>
+      <div id="buttons" *ngIf="state === 'default' || state === 'error'">
+        <button
+          matStepperPrevious
+          type="button"
+          mat-stroked-button
+          class="button stroked-button inverse-button"
+        >
+          REPETIR FOTOS
+        </button>
+        <button
+          *ngIf="state === 'default'"
+          mat-flat-button
+          color="accent"
+          type="button"
+          class="button primary-button inverse-button"
+          (click)="validate()"
+        >
+          ENVIAR
+        </button>
+      </div>
     </mat-step>
   </mat-horizontal-stepper>
 </form>

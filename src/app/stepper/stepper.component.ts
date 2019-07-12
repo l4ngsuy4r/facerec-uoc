@@ -12,9 +12,7 @@ import { AppService, ValidateRequest } from '../app.service'
 export class StepperComponent implements AfterViewInit, OnDestroy {
   stepperForm: FormGroup
   images: string[] = []
-  loading = false
-  error = false
-  success = false
+  state: 'loading' | 'success' | 'error' | 'default'
 
   private camAccess: boolean
   private step1Changes: Subscription
@@ -57,7 +55,7 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
     this.step3Changes = this.stepperForm.controls.step3.statusChanges.subscribe(
       status => {
         if (status === 'VALID') {
-          this.error = false
+          this.state = 'default'
           this.stepper.next()
         }
       }
@@ -77,16 +75,21 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
   }
 
   validate() {
-    this.loading = true
+    this.state = 'loading'
     const body: ValidateRequest = {
       uid: 'yeeeha',
       pics: this.images.map(pic => pic.split(',')[1])
     }
     this.service.validate(body).subscribe(response => {
       console.log(response)
-      this.loading = false
-      if (response.registrationErrorList.length) this.error = true
-      else this.success = true
+      // if (
+      //   response.registrationErrorList &&
+      //   response.registrationErrorList.length
+      // ) {
+      //   this.state = 'error'
+      // }
+      // else this.state = 'success'
+      this.state = 'success'
     })
   }
 }

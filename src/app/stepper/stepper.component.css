@@ -9,7 +9,6 @@ img {
 mat-horizontal-stepper {
   background-color: transparent;
   color: white;
-  /*height: 600px;*/
 }
 
 a {
@@ -19,7 +18,6 @@ a {
 mat-checkbox.mat-checkbox {
   display: block;
   text-align: center;
-  /*margin: 48px 0 32px;*/
 }
 
 button[mat-stroked-button].mat-stroked-button span {
@@ -37,6 +35,7 @@ button[mat-stroked-button].mat-stroked-button span {
 p {
   text-align: center;
 }
+
 #error-message {
   color: #ff7d87;
 }
@@ -45,14 +44,19 @@ ul {
   font-size: 18px;
 }
 
-::ng-deep .mat-horizontal-content-container {
-  /*height: 424px !important;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
+#success {
+  text-align: center;
+}
+
+#success h2 {
+  color: #38ff90;
+}
+
+app-gallery {
+  margin-top: 24px;
 }
 
 ::ng-deep .mat-horizontal-stepper-content {
-  /*flex-grow: 1;*/
   height: 300px;
   display: flex;
   flex-direction: column;
