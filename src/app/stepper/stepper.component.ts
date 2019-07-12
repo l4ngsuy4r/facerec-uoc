@@ -82,14 +82,13 @@ export class StepperComponent implements AfterViewInit, OnDestroy {
     }
     this.service.validate(body).subscribe(response => {
       console.log(response)
-      // if (
-      //   response.registrationErrorList &&
-      //   response.registrationErrorList.length
-      // ) {
-      //   this.state = 'error'
-      // }
-      // else this.state = 'success'
-      this.state = 'success'
+      if (
+        response.registrationErrorList &&
+        response.registrationErrorList.length
+      ) {
+        this.state = 'error'
+      } else this.state = 'success'
+      // this.state = 'success'
     })
   }
 }

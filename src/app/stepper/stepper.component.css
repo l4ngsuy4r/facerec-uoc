@@ -38,6 +38,7 @@ p {
 
 #error-message {
   color: #ff7d87;
+  text-align: center;
 }
 
 ul {

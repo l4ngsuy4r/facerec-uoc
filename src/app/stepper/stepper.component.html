@@ -33,7 +33,7 @@
     <mat-step
       #camStep
       [stepControl]="stepperForm.controls.step3"
-      [editable]="true"
+      [editable]="state !== 'success'"
     >
       <ng-template matStepLabel>Hazte las fotos</ng-template>
       <app-picture-registration
@@ -51,9 +51,9 @@
         <app-gallery *ngSwitchCase="'default'" [images]="images"></app-gallery>
         <mat-spinner *ngSwitchCase="'loading'"></mat-spinner>
         <div *ngSwitchCase="'error'">
-          <p id="error-message">
+          <h3 id="error-message">
             Algo ha ido mal con tu registro. Por favor, repítelo.
-          </p>
+          </h3>
           <ul>
             <li>
               Asegúrate de que apareces centrado en el marco y mirándo a la
