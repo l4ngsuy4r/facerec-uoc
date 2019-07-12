@@ -3,7 +3,7 @@
   <div id="blue"></div>
   <div id="top-bar">
     <img src="../../assets/images/uoc-logo.png" id="logo" />
-    <h2 id="header">
+    <h2 id="header" i18n="encabezado de la página web">
       Sistema de <br />
       Reconocimiento Facial
     </h2>
@@ -21,13 +21,18 @@
 <!-- stepper -->
 <div id="registration-wrapper">
   <div id="stepper-wrapper">
-    <h1 id="title">Regístrate</h1>
+    <h1 id="title" i18n="encabezado de formulario de registro">Regístrate</h1>
     <app-stepper></app-stepper>
   </div>
 </div>
 
 <!-- image & text sections -->
-<app-section title="Registro" image="assets/images/uoc-registro.png">
+<app-section
+  title="Registro"
+  image="assets/images/uoc-registro.png"
+  i18n="texto informativo sobre el registro"
+  i18n-title="encabezado del texto informativo sobre el registro"
+>
   Para registrarte debes hacer tres fotografías con la cámara web de tu
   ordenador. Así podremos crear el modelo biométrico de tu cara. Durante el
   curso utilizaremos este modelo para contrastar tu identidad.
@@ -35,6 +40,8 @@
 <app-section
   title="Monitorización"
   image="assets/images/uoc-monitorizacion.png"
+  i18n="texto informativo sobre la monitorización"
+  i18n-title="encabezado del texto informativo sobre la monitorización"
   reverse
 >
   Durante la realización de las actividades, el sistema captará mágenes
@@ -42,7 +49,12 @@
   verificar tu identidad. Para ello, es necesario que autorices la aplicación a
   utilizar tu cámara web.
 </app-section>
-<app-section title="Resultados" image="assets/images/uoc-resultados.png">
+<app-section
+  title="Resultados"
+  image="assets/images/uoc-resultados.png"
+  i18n="texto informativo sobre los resultados"
+  i18n-title="encabezado del texto informativo sobre los resultados"
+>
   Los resultados estarán disponibles en 24 horas como máximo. Las imágenes se
   revisarán en caso de que hubiera alguna incidencia o reclamación.
 </app-section>
@@ -50,14 +62,22 @@
 <!-- only text sections -->
 <div id="security-privacy-wrapper">
   <div id="security-privacy">
-    <app-section title="Seguridad">
+    <app-section
+      title="Seguridad"
+      i18n="texto informativo sobre la seguridad"
+      i18n-title="encabezado del texto informativo sobre la seguridad"
+    >
       Las imágenes se envían siempre con un protocolo de seguridad HTTPS y por
       canales seguros y cifrados. Además, solo se identifican con un código
       (nunca con datos de carácter personal). Todas las imágenes se eliminarán
       cuando termine el semestre.
     </app-section>
     <div id="spacer"></div>
-    <app-section title="Privacidad">
+    <app-section
+      title="Privacidad"
+      i18n="texto informativo sobre la privacidad"
+      i18n-title="encabezado del texto informativo sobre la privacidad"
+    >
       La UOC sólo revisará las imágenes en los casos de incidencia o reclamación
       garantizando siempre la seguridad y privacidad de las mismas y el
       cumplimiento del RGPD. Si se detecta algún comportamiento no autorizado,

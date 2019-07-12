@@ -2,8 +2,12 @@
   <mat-horizontal-stepper linear #stepper>
     <!-- aceptar condiciones -->
     <mat-step [stepControl]="stepperForm.controls.step1" [editable]="false">
-      <ng-template matStepLabel>Acepta las condiciones</ng-template>
-      <mat-checkbox formControlName="step1"
+      <ng-template matStepLabel i18n="etiqueta de uno de los pasos del registro"
+        >Acepta las condiciones</ng-template
+      >
+      <mat-checkbox
+        formControlName="step1"
+        i18n="mensaje junto al checkbox para aceptar las condiciones"
         >He leído y acepto los
         <a
           href="https://www.smowltech.net/firma/conditions_GDPR_1_es.html"
@@ -15,8 +19,10 @@
 
     <!-- habilitar camara -->
     <mat-step [stepControl]="stepperForm.controls.step2" [editable]="false">
-      <ng-template matStepLabel>Habilita la cámara</ng-template>
-      <p>
+      <ng-template matStepLabe i18n="etiqueta de uno de los pasos del registro"
+        >Habilita la cámara</ng-template
+      >
+      <p i18n="mensaje instructivo para obtener acceso de la cámara">
         Al hacer click en el botón, deberás aceptar un diálogo emergente.
       </p>
       <button
@@ -24,6 +30,7 @@
         type="button"
         class="button primary-button inverse-button center-block"
         (click)="getCamAccess()"
+        i18n="botón para solicitar acceso a la cámara"
       >
         SOLICITAR ACCESO
       </button>
@@ -35,7 +42,9 @@
       [stepControl]="stepperForm.controls.step3"
       [editable]="state !== 'success'"
     >
-      <ng-template matStepLabel>Hazte las fotos</ng-template>
+      <ng-template matStepLabel i18n="etiqueta de uno de los pasos del registro"
+        >Hazte las fotos</ng-template
+      >
       <app-picture-registration
         *ngIf="stepperForm.controls.step2.value"
         (complete)="
@@ -46,30 +55,44 @@
 
     <!-- confirmar fotos -->
     <mat-step [editable]="false">
-      <ng-template matStepLabel>Confirma</ng-template>
+      <ng-template matStepLabel i18n="etiqueta de uno de los pasos del registro"
+        >Confirma</ng-template
+      >
       <ng-container [ngSwitch]="state">
         <app-gallery *ngSwitchCase="'default'" [images]="images"></app-gallery>
         <mat-spinner *ngSwitchCase="'loading'"></mat-spinner>
         <div *ngSwitchCase="'error'">
-          <h3 id="error-message">
+          <h3
+            id="error-message"
+            i18n="encabezado del mensaje de error en el registro"
+          >
             Algo ha ido mal con tu registro. Por favor, repítelo.
           </h3>
           <ul>
-            <li>
+            <li i18n="recomendación para que el registro sea exitoso">
               Asegúrate de que apareces centrado en el marco y mirándo a la
               cámara.
             </li>
-            <li>
+            <li i18n="recomendación para que el registro sea exitoso">
               Procura de que tu cara se vea claramente y que iluminación sea
               adecuada.
             </li>
-            <li>Evita usar accesorios que cubran tu cara y cabeza.</li>
-            <li>Debes estar sólo en las imágenes.</li>
+            <li i18n="recomendación para que el registro sea exitoso">
+              Evita usar accesorios que cubran tu cara y cabeza.
+            </li>
+            <li i18n="recomendación para que el registro sea exitoso">
+              Debes estar sólo en las imágenes.
+            </li>
           </ul>
         </div>
         <div *ngSwitchCase="'success'" id="success">
-          <h2>¡Enhorabuena! Ya has terminado.</h2>
-          <p>El proceso de registro se ha completado correctamente y tus datos ya están guardados en el sistema.</p>
+          <h2 i18n="encabezado del mensaje de éxito en el registro">
+            ¡Enhorabuena! Ya has terminado.
+          </h2>
+          <p i18n="mensaje de éxito en el registro">
+            El proceso de registro se ha completado correctamente y tus datos ya
+            están guardados en el sistema.
+          </p>
         </div>
       </ng-container>
       <div id="buttons" *ngIf="state === 'default' || state === 'error'">
@@ -78,6 +101,7 @@
           type="button"
           mat-stroked-button
           class="button stroked-button inverse-button"
+          i18n="botón para repetir las fotos"
         >
           REPETIR FOTOS
         </button>
@@ -87,6 +111,7 @@
           color="accent"
           type="button"
           class="button primary-button inverse-button"
+          i18n="botón para enviar y validar las fotos"
           (click)="validate()"
         >
           ENVIAR

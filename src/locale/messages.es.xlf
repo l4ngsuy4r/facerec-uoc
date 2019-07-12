@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="b5c67f11091d14f7ecf824210bef0c16a7a2f188" datatype="html">
+        <source>
+      Sistema de <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+      Reconocimiento Facial
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">encabezado de la página web</note>
+      </trans-unit>
+      <trans-unit id="412209b9cfe738093946bc2706ff80c1ae5cab02" datatype="html">
+        <source>Regístrate</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">encabezado de formulario de registro</note>
+      </trans-unit>
+      <trans-unit id="e506cddd1bbbfc5cd69a8370f38d58700b96a670" datatype="html">
+        <source>
+  Para registrarte debes hacer tres fotografías con la cámara web de tu
+  ordenador. Así podremos crear el modelo biométrico de tu cara. Durante el
+  curso utilizaremos este modelo para contrastar tu identidad.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">texto informativo sobre el registro</note>
+      </trans-unit>
+      <trans-unit id="cf04f7c4d68523426a322308a940acf7a2d09b29" datatype="html">
+        <source>Registro</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del texto informativo sobre el registro</note>
+      </trans-unit>
+      <trans-unit id="50b3f3f9e169a9f612287aae9925d8881863044b" datatype="html">
+        <source>
+  Durante la realización de las actividades, el sistema captará mágenes
+  aleatoriamente. Estas imágenes se enviarán al servidor de Smowltech para
+  verificar tu identidad. Para ello, es necesario que autorices la aplicación a
+  utilizar tu cámara web.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">texto informativo sobre la monitorización</note>
+      </trans-unit>
+      <trans-unit id="378e54249cbd42ebfc7e332171973ea5e69c9868" datatype="html">
+        <source>Monitorización</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del texto informativo sobre la monitorización</note>
+      </trans-unit>
+      <trans-unit id="7b67ac6eb40c3e7db305ae61ec8cebcd57b67591" datatype="html">
+        <source>
+  Los resultados estarán disponibles en 24 horas como máximo. Las imágenes se
+  revisarán en caso de que hubiera alguna incidencia o reclamación.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">texto informativo sobre los resultados</note>
+      </trans-unit>
+      <trans-unit id="9d189e51145762dc3874e10d0b31dbe2f7a89371" datatype="html">
+        <source>Resultados</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del texto informativo sobre los resultados</note>
+      </trans-unit>
+      <trans-unit id="041145fb8b604a73c749c3606f6f02980ec0215e" datatype="html">
+        <source>
+      Las imágenes se envían siempre con un protocolo de seguridad HTTPS y por
+      canales seguros y cifrados. Además, solo se identifican con un código
+      (nunca con datos de carácter personal). Todas las imágenes se eliminarán
+      cuando termine el semestre.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">texto informativo sobre la seguridad</note>
+      </trans-unit>
+      <trans-unit id="b96f21618653f13c5b7e4cef1f4cda87ea94702e" datatype="html">
+        <source>Seguridad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del texto informativo sobre la seguridad</note>
+      </trans-unit>
+      <trans-unit id="952bd79046e3f3055a6f744d1aff4b01f5ce62e3" datatype="html">
+        <source>
+      La UOC sólo revisará las imágenes en los casos de incidencia o reclamación
+      garantizando siempre la seguridad y privacidad de las mismas y el
+      cumplimiento del RGPD. Si se detecta algún comportamiento no autorizado,
+      será comunicado a la UOC.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <note priority="1" from="description">texto informativo sobre la privacidad</note>
+      </trans-unit>
+      <trans-unit id="750be0cd22467694724d85c3049e395bfc0f0e0d" datatype="html">
+        <source>Privacidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del texto informativo sobre la privacidad</note>
+      </trans-unit>
+      <trans-unit id="4fb7bb2dc74ebb4475b958f645777d37bc5f3ffa" datatype="html">
+        <source>Acepta las condiciones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">etiqueta de uno de los pasos del registro</note>
+      </trans-unit>
+      <trans-unit id="6ded8f6aca55bdb053a59b615d3210d3efb69ed2" datatype="html">
+        <source>He leído y acepto los
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>términos y condiciones<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">mensaje junto al checkbox para aceptar las condiciones</note>
+      </trans-unit>
+      <trans-unit id="feac37700f96897f5b3822a26b87f9fe9f359c04" datatype="html">
+        <source>Habilita la cámara</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">etiqueta de uno de los pasos del registro</note>
+      </trans-unit>
+      <trans-unit id="123f5d96cb953393700354924eef543b2683fec5" datatype="html">
+        <source>
+        Al hacer click en el botón, deberás aceptar un diálogo emergente.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">mensaje instructivo para obtener acceso de la cámara</note>
+      </trans-unit>
+      <trans-unit id="b815c621e34c951ec5bccc00b96bdc4067ac0de2" datatype="html">
+        <source>
+        SOLICITAR ACCESO
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">botón para solicitar acceso a la cámara</note>
+      </trans-unit>
+      <trans-unit id="6c0e4c92967e527c3fde29d7a5aaf457500dcb48" datatype="html">
+        <source>Hazte las fotos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">etiqueta de uno de los pasos del registro</note>
+      </trans-unit>
+      <trans-unit id="6d2df526e92ce174c835e90c8c2ba917d60d7d3d" datatype="html">
+        <source>Confirma</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <note priority="1" from="description">etiqueta de uno de los pasos del registro</note>
+      </trans-unit>
+      <trans-unit id="c68837dbdb271e573a10361b11b7e77cc6aaed7f" datatype="html">
+        <source>
+            Algo ha ido mal con tu registro. Por favor, repítelo.
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del mensaje de error en el registro</note>
+      </trans-unit>
+      <trans-unit id="f4b519031e0aedab9e11840300101e886be74187" datatype="html">
+        <source>
+              Asegúrate de que apareces centrado en el marco y mirándo a la
+              cámara.
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <note priority="1" from="description">recomendación para que el registro sea exitoso</note>
+      </trans-unit>
+      <trans-unit id="92cf47e2a07576817a2a4e8a5d1530a8582d39c4" datatype="html">
+        <source>
+              Procura de que tu cara se vea claramente y que iluminación sea
+              adecuada.
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <note priority="1" from="description">recomendación para que el registro sea exitoso</note>
+      </trans-unit>
+      <trans-unit id="1e411139572126e05bd6ef649b7af9372d052ef2" datatype="html">
+        <source>
+              Evita usar accesorios que cubran tu cara y cabeza.
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <note priority="1" from="description">recomendación para que el registro sea exitoso</note>
+      </trans-unit>
+      <trans-unit id="ce5d1a95ff82f0da311845cf62f9c6c1e26aea2e" datatype="html">
+        <source>
+              Debes estar sólo en las imágenes.
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <note priority="1" from="description">recomendación para que el registro sea exitoso</note>
+      </trans-unit>
+      <trans-unit id="f00b6d9ec5a692a6f1e6e036e874638397fa64f4" datatype="html">
+        <source>
+            ¡Enhorabuena! Ya has terminado.
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <note priority="1" from="description">encabezado del mensaje de éxito en el registro</note>
+      </trans-unit>
+      <trans-unit id="3a5b33e5167e79c949e3a1ec5f7247e11f3627be" datatype="html">
+        <source>
+            El proceso de registro se ha completado correctamente y tus datos ya
+            están guardados en el sistema.
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <note priority="1" from="description">mensaje de éxito en el registro</note>
+      </trans-unit>
+      <trans-unit id="5d5801ac17dc0b01c07a4f33c0d95cf2d40e4bde" datatype="html">
+        <source>
+          REPETIR FOTOS
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <note priority="1" from="description">botón para repetir las fotos</note>
+      </trans-unit>
+      <trans-unit id="d2a73cf32e1bc23adda9e91aec6b7fc9c0463a16" datatype="html">
+        <source>
+          ENVIAR
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stepper/stepper.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+        <note priority="1" from="description">botón para enviar y validar las fotos</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
